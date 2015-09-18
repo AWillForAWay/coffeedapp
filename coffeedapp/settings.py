@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from django.conf import settings
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAIN_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'coffeedapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(MAIN_DIR, 'coffeedapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -112,10 +113,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = (
-    os.path.join(MAIN_DIR, 'templates'),
-    )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static/'),
+)
 
-STATIC_DIRS = (
-    os.path.join(MAIN_DIR, 'static'),
-    )
+STATIC_ROOT = 'staticfiles'
