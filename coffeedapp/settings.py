@@ -59,7 +59,7 @@ ROOT_URLCONF = 'coffeedapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(MAIN_DIR, 'coffeedapp/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'coffeedapp/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
